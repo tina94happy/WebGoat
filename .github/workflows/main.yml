@@ -7,11 +7,16 @@ jobs:
   mend-cli:
     name: Mend-CLI
     env:
-      MEND_EMAIL: tina_wt_su@gss.com.tw
-      MEND_USER_KEY: 304684bac7684c4d815ab7753d36360d472753ae6a1c4fa496f534727fdde25b
+      MEND_EMAIL: ${{secrets.MEND_EMAIL}}
+      MEND_USER_KEY: ${{secrets.MEND_USERKEY}}
       MEND_URL: https://saas.whitesourcesoftware.com
     runs-on: ubuntu-latest
     steps:
+      # test
+      - name: test secret
+        run: | 
+          echo ${{secrets.MEND_EMAIL}}
+
       # Downloading Mend CLI
       - name: Mend CLI
         run: | 
