@@ -12,11 +12,6 @@ jobs:
       MEND_URL: https://saas.whitesourcesoftware.com
     runs-on: ubuntu-latest
     steps:
-      # test
-      - name: test secret
-        run: | 
-          echo ${{secrets.MEND_EMAIL}}
-
       # Downloading Mend CLI
       - name: Mend CLI
         run: | 
